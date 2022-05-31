@@ -10,6 +10,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.Models.DBEntity;
+using WebApplication1.Repository;
+using WebApplication1.Repository.Interface;
+using WebApplication1.Service;
+using WebApplication1.Service.Interface;
 
 namespace WebApplication1
 {
@@ -29,6 +33,11 @@ namespace WebApplication1
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Member"));
             });
+
+            services.AddTransient<IDBRepository, DBRepository>();
+            services.AddTransient<IProductRepositroy, ProductRepository>();
+            services.AddTransient<IProductService, ProductService>();
+
             services.AddControllersWithViews();
         }
 
