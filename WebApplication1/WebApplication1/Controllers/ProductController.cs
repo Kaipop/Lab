@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApplication1.Models.Dto.Product;
+using WebApplication1.Models.ViewModel.Data;
 using WebApplication1.Models.ViewModel.View;
 using WebApplication1.Service.Interface;
 
@@ -46,6 +48,21 @@ namespace WebApplication1.Controllers
             };
 
             return View(product);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateProduct(ProductEditDataModel request)
+        {
+            //viewmodel要轉回成DTO去編輯
+            var productDto = new UpdateProductDto
+            {
+                Id = request.Id,
+                Name = request.Name,
+                UnitPrice = request.UnitPrice
+            };
+
+            _productService.UpdateProduct(productDto);
+            return RedirectToAction("Index");
         }
     }
 }
