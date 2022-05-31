@@ -47,5 +47,11 @@ namespace WebApplication1.Service
             _productRepository.Update(target);
             _productRepository.Save();
         }
+
+        public void DeleteProduct(int id)
+        {
+            var target = _productRepository.GetAll<Product>().First(x => x.Id == id);
+            _productRepository.Delete<Product>(target);
+        }
     }
 }

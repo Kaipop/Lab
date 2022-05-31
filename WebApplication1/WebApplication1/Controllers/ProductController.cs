@@ -64,5 +64,10 @@ namespace WebApplication1.Controllers
             _productService.UpdateProduct(productDto);
             return RedirectToAction("Index");
         }
+
+        public IActionResult DeleteProduct(int id)
+        {
+            return RedirectToAction("Index");
+        }
     }
 }
