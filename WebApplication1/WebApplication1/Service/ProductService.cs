@@ -38,5 +38,14 @@ namespace WebApplication1.Service
                 ImgUrl = soruce.ImgUrl,
             };
         }
+
+        public void UpdateProduct(UpdateProductDto request)
+        {
+            var target = _productRepository.GetAll<Product>().First(x => x.Id == request.Id);
+            target.Name = request.Name;
+            target.Price = request.UnitPrice;
+            _productRepository.Update(target);
+            _productRepository.Save();
+        }
     }
 }
