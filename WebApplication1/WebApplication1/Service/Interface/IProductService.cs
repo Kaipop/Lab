@@ -11,5 +11,6 @@ namespace WebApplication1.Service.Interface
         public IEnumerable<GetAllProductDto> GetAllProduct();
         public GetProductDto GetProduct(int id);
         public void UpdateProduct(UpdateProductDto request);
+        public void DeleteProduct(int id);
     }
 }
