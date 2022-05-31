@@ -7,13 +7,9 @@ namespace WebApplication1.Models.ViewModel.View
 {
     public class ProductDetailsViewModel
     {
-        public ProductData Product { get; set; }
-        public class ProductData
-        {
-            public int id { get; set; }
-            public string Name { get; set; }
-            public decimal UnitPrice { get; set; }
-            public string ImgUrl { get; set; }
-        }
+        public int id { get; set; }
+        public string Name { get; set; }
+        public decimal UnitPrice { get; set; }
+        public string ImgUrl { get; set; }
     }
 }

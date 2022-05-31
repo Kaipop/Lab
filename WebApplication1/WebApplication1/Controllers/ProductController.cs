@@ -39,7 +39,7 @@ namespace WebApplication1.Controllers
         public IActionResult ProductDetail(int id)
         {
             var productDto = _productService.GetProduct(id);
-            var product = new ProductDetailsViewModel.ProductData
+            var product = new ProductDetailsViewModel
             {
                 id = productDto.Id,
                 Name = productDto.Name,
